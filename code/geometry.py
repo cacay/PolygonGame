@@ -1,3 +1,4 @@
+# Copyright (c) 2011 Cosku Acay, http://www.coskuacay.com
 
 from math import *
 #THE LIBRARY THAT HANDLES ALL MATH
