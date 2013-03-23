@@ -10,7 +10,7 @@ How to Run
 
 Instructions
 --------------------------------
-The red isosceles triangle that starts in the middle of the screen is your ship. Your goal is to avoid all asteroids and shoot them down. You only have one life so use it well.
+The red isosceles triangle that starts in the middle of the screen is your ship. Your goal is to avoid all asteroids and shoot them down. Every object except for bullets wrap around the screen. You only have one life so use it well.
 ###Controls
 * Arrow keys to move around (down arrow slows you down instead of going backwards)
 * Space to shoot
