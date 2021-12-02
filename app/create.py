@@ -1,8 +1,7 @@
 # Copyright (c) 2011 Cosku Acay, http://www.coskuacay.com
 
-import data
-import random
-from generators import *
+import app.data as data
+from app.generators import *
 
 # THIS CREATES THE ENEMY OBJECTS
 
@@ -57,7 +56,7 @@ def createTriangle(center):
     global generators
     global enemies
 
-    newTriangle = generators["triangleGen"].next()
+    newTriangle = next(generators["triangleGen"])
     newTriangle.position = list(center)
     newTriangle.speed = 4 + random.random() * 8
     newTriangle.angularSpeed = radians(0.01 + random.random() * 10)
@@ -69,7 +68,7 @@ def createPenTri(center):
     global generators
     global enemies
 
-    newTriangle = generators["pentriGen"].next()
+    newTriangle = next(generators["pentriGen"])
     newTriangle.position = list(center)
     newTriangle.speed = 5 + random.random() * 7
     newTriangle.angularSpeed = radians(0.5 + random.random() * 10)
@@ -81,7 +80,7 @@ def createRandomSquare():
     global generators
     global enemies
 
-    newSquare = generators["squareGen"].next()
+    newSquare = next(generators["squareGen"])
     x = -random.random() * 200
     y = -random.random() * 200
     newSquare.position = [x, y]
@@ -95,7 +94,7 @@ def createRandomPentagon():
     global generators
     global enemies
 
-    newPent = generators["pentagonGen"].next()
+    newPent = next(generators["pentagonGen"])
     x = -random.random() * 200
     y = -random.random() * 200
     newPent.position = [x, y]
@@ -109,7 +108,7 @@ def createRandomHexegon():
     global generators
     global enemies
 
-    newHexe = generators["hexegonGen"].next()
+    newHexe = next(generators["hexegonGen"])
     x = -random.random() * 200
     y = -random.random() * 200
     newHexe.position = [x, y]
@@ -123,7 +122,7 @@ def createRandomMyGod():
     global generators
     global enemies
 
-    newGod = generators["myGodGen"].next()
+    newGod = next(generators["myGodGen"])
     x = -random.random() * 200
     y = -random.random() * 200
     newGod.position = [x, y]

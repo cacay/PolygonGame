@@ -1,9 +1,9 @@
 # Copyright (c) 2011 Cosku Acay, http://www.coskuacay.com
 
-import create
-import smart
-from main import *
-from Tkinter import *
+from tkinter import *
+
+import app.smart as smart
+from app.main import *
 
 # THIS HANDLES GUI EVENTS
 
@@ -48,7 +48,7 @@ def start():
     MyShip["rotationSpeed"] = options["myRotation"]
 
     # Create four initial squares
-    for index in xrange(4):
+    for index in range(4):
         createRandomSquare()
     redraw()
     if gameStarted == 0:
@@ -139,7 +139,7 @@ def timerFired():
         redraw()
     elif changeSize == True:
         redraw()
-    canvas.after(1000 / 60, timerFired)
+    canvas.after(int(1000 / 60), timerFired)
 
 
 # Get Keys to move MyShip

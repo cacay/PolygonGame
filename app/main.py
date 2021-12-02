@@ -1,7 +1,7 @@
 # Copyright (c) 2011 Cosku Acay, http://www.coskuacay.com
 
-import create
-from create import *
+import app.create as create
+from app.create import *
 
 
 # THIS IS THE MAIN GAME FILE
@@ -126,8 +126,8 @@ def moveMyShip():
     if MyShip["score"] - MyShip["explode"] >= 1000:
         MyShip["explode"] += 1000
         numBullets = int(15 + 15 * MyShip["timerUpgrade"])
-        for i in xrange(numBullets):
-            newBullet = generators["bulletGen"].next()
+        for i in range(numBullets):
+            newBullet = next(generators["bulletGen"])
             newBullet.position = list(MyShip["object"].position)
             newBullet.direction = i * 2 * pi / numBullets
             MyShip["bullets"].append(newBullet)
@@ -258,7 +258,7 @@ def fire():
     global MyShip
     global generators
 
-    newBullet = generators["bulletGen"].next()
+    newBullet = next(generators["bulletGen"])
     newBullet.position = list(MyShip["object"].position)
     newBullet.direction = MyShip["object"].direction
     MyShip["bullets"].append(newBullet)

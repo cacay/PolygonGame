@@ -1,7 +1,5 @@
 # Copyright (c) 2011 Cosku Acay, http://www.coskuacay.com
 
-from math import *
-
 # THIS MODULE HANDLES ALL COLLISION CALCULATIONS
 
 # /////Circle Collisions/////
@@ -105,7 +103,7 @@ def polygonsCollide(poly1, poly2):
     # Assumes a closed polygon (vertex(n) = vertex(0))
 
     # Check for each edge of the first polygon
-    for index in xrange(len(poly1) - 1):
+    for index in range(len(poly1) - 1):
         normal = getNormal(poly1[index], poly1[index + 1])  # Get the normal
         test1 = projectPolygon(poly1, normal)  # Min, Max values for poly1
         test2 = projectPolygon(poly2, normal)  # Min, Max values for poly2
@@ -113,7 +111,7 @@ def polygonsCollide(poly1, poly2):
         if linesOverlap(test1, test2) == False: return False
 
     # Repeat the same thing for the other polygon
-    for index in xrange(len(poly2) - 1):
+    for index in range(len(poly2) - 1):
         normal = getNormal(poly2[index], poly2[index + 1])  # Get the normal
         test1 = projectPolygon(poly1, normal)  # Min-Max values for poly1
         test2 = projectPolygon(poly2, normal)  # Min-Max values for poly2

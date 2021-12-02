@@ -1,7 +1,8 @@
 # Copyright (c) 2011 Cosku Acay, http://www.coskuacay.com
 
 import random
-from smart import *
+
+from app.smart import *
 
 
 # THESE ARE THE GENERATORS THAT EASE THINS UP A LITTLE
@@ -20,7 +21,7 @@ def bulletGenerator(canvas, fill, outline, width, size, speed):
 # This is for creating smartObjects with the same shape
 def objectGenerator(canvas, polygon, fill, outline, width, options):
     # If a center to the polygon is given, use it
-    if options.has_key("center"):
+    if "center" in options:
         center = options["center"]
     else:
         center = "CENTROID"
@@ -38,14 +39,14 @@ def objectGenerator(canvas, polygon, fill, outline, width, options):
     randomScale = 0.0  # Multiply scale by this amount for randomness
 
     # Get all the options from the given dictionary
-    if len(options) <> 0:
-        if options.has_key("health"): health = options["health"]
-        if options.has_key("scale"): scale = options["scale"]
-        if options.has_key("speed"): speed = options["speed"]
-        if options.has_key("direction"): direction = options["direction"]
-        if options.has_key("rotation"): rotation = options["rotation"]
-        if options.has_key("angularSpeed"): angularSpeed = options["angularSpeed"]
-        if options.has_key("randomScale"): randomScale = options["randomScale"]
+    if len(options) != 0:
+        if "health" in options: health = options["health"]
+        if "scale" in options: scale = options["scale"]
+        if "speed" in options: speed = options["speed"]
+        if "direction" in options: direction = options["direction"]
+        if "rotation" in options: rotation = options["rotation"]
+        if "angularSpeed" in options: angularSpeed = options["angularSpeed"]
+        if "randomScale" in options: randomScale = options["randomScale"]
 
     # Create a smartObject so that you can duplicate() it
     duplicator = smartObject(newShape, canvas)

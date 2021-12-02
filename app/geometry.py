@@ -2,13 +2,13 @@
 
 from math import *
 
-# THE LIBRARY THAT HANDLES ALL MATH
+"""
+THE LIBRARY THAT HANDLES ALL MATH
 
-'''
 Most functions in this module assume that you pass a LIST of points.
 Unlike Tkinter points, all points must be LISTs of two coordinates (x and y).
-Functions directy affect the lists, and generally do not return any variables.
-'''
+Functions directly affect the lists, and generally do not return any variables.
+"""
 
 '''/////Transition Functions/////'''
 
@@ -35,7 +35,7 @@ def addOffset(polygon, offset):
     return  # Note that we don't need to return the list
 
 
-'''/////Calculation Functions/////'''
+# /////Calculation Functions/////
 
 
 # Returns the radius of the bounding circle (distance to farthest point)
@@ -47,22 +47,21 @@ def boundingCircle(polygon):
     return maxDistance ** 0.5  # Return the square root
 
 
-# Returns the centroid of a polygon
-'''
-This function calculates the actual centroid. It calculates the
-area (which is necassary to find the centroid) also. 
-Taken from: "http://en.wikipedia.org/wiki/Centroid"
-'''
-
-
 def Centroid(polygon):
+    """
+    Returns the centroid of a polygon.
+
+    This function calculates the actual centroid. It calculates the
+    area (which is necessary to find the centroid) also.
+    Taken from: "http://en.wikipedia.org/wiki/Centroid".
+    """
     # This function assumes a closed polygon (point(n)=point(0))
     area = 0.0  # Calculate the area with this
     sumX = 0.0  # Sum of x coordinates
     sumY = 0.0  # Sum of y coordinates
     common = 0.0  # Common term in the equation(s)
 
-    for index in xrange(len(polygon) - 1):  # Repeat for index up to n-1
+    for index in range(len(polygon) - 1):  # Repeat for index up to n-1
         # Calculate the common term (used in three places)
         common = polygon[index][0] * polygon[index + 1][1]
         common -= polygon[index + 1][0] * polygon[index][1]
@@ -74,7 +73,7 @@ def Centroid(polygon):
     return (sumX / area, sumY / area)
 
 
-'''/////Helper Functions/////'''
+# /////Helper Functions/////
 
 
 # Copies a polygon and returns a list. Solves the "pointer" problem.

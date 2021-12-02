@@ -1,8 +1,7 @@
 # Copyright (c) 2011 Cosku Acay, http://www.coskuacay.com
 
-from math import *
-from geometry import *
-import collisions
+import app.collisions as collisions
+from app.geometry import *
 
 # THIS IS THE SMART OBJECTS CLASS
 
@@ -171,8 +170,8 @@ class bullet:
         radius = self.size
 
         if (x + radius + wrapOffset < 0) or (y + radius + wrapOffset < 0) or \
-                (x - radius - wrapOffset > display[0]) or \
-                (y - radius - wrapOffset > display[1]):
+            (x - radius - wrapOffset > display[0]) or \
+            (y - radius - wrapOffset > display[1]):
             return True
         return False
 
@@ -182,7 +181,7 @@ class shape:
     # Changes the polygon
     def changePolygon(self, polygon, center):
         # The last point must be the same with the first one
-        if polygon[-1] <> polygon[0]:
+        if polygon[-1] != polygon[0]:
             polygon.append(list(polygon[0]))
 
         self.polygon = polygon
@@ -191,8 +190,6 @@ class shape:
             return
         elif center == "CENTROID":
             newCenter = Centroid(polygon)
-        elif center == "CENTER":
-            newCenter = Center(polygon)
         else:
             newCenter = tuple(center)
 

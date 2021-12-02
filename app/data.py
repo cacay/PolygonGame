@@ -1,7 +1,8 @@
 # Copyright (c) 2011 Cosku Acay, http://www.coskuacay.com
 
 from math import *
-from smart import shape
+
+from app.smart import shape
 
 # THIS FILE CONTAINS THE POLYGON DATA
 
@@ -20,7 +21,7 @@ def createRegular(sides):
     angle = 2 * pi / sides
     currentAngle = 0.0
     newPolygon = [[0, 0]]
-    for index in xrange(sides - 1):
+    for index in range(sides - 1):
         currentAngle += angle
         newPoint = [newPolygon[index][0] + cos(currentAngle),
                     newPolygon[index][1] + sin(currentAngle)]
